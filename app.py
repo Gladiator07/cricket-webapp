@@ -70,8 +70,8 @@ def predict():
         
         temp_array = temp_array + [overs, runs, wickets, runs_in_prev_5, wickets_in_prev_5]
         
-        data = np.array([temp_array])
-        my_prediction = int(regressor.predict(data)[0])
+        data_ipl = np.array([temp_array])
+        my_prediction = int(regressor.predict(data_ipl)[0])
               
         return render_template('result.html', lower_limit = my_prediction-10, upper_limit = my_prediction+5, title=title, match_type=match_type)
 
