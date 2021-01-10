@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>First Innings Score Predictor</title>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='ipl-favicon.ico') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+</head>
+<style>
+  body {
+    min-height: 100%;
+    background-image: url(../static/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+</style>
+
+<body>
+  <!-- Grey with black text -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('home') }}">IPL</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('odi') }}">ODI</a>
+      </li>
+    </ul>
+  </nav>
+
+
+  <!-- Website Title -->
+  <div class="container">
+    <h2 class='container-heading'><span class='heading_first'>{{ title }}</span><span
+        class="heading_second">{{ match_type }}</span></h2>
+    <div class='description'>
+      <p style="color: white;">A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+    </div>
+  </div>
+  {% block body %} {% endblock %}
+
+  
+</body>
+
+</html>
